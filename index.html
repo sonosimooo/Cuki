@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cuki M-1 Arduino Car</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#overview"><i class="fas fa-robot"></i> Overview</a></li>
+          <li><a href="#hardware"><i class="fas fa-microchip"></i> Hardware</a></li>
+          <li><a href="#specs"><i class="fas fa-clipboard-list"></i> Specifications</a></li>
+        </ul>
+        <button id="theme-toggle" class="theme-toggle">
+          <i class="fas fa-moon"></i>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero">
+        <div class="hero-content">
+          <h1 class="animate-slide-up">Cuki M-1</h1>
+          <p class="tagline animate-slide-up">Advanced Arduino-Powered Robot Car</p>
+          <div class="hero-image animate-fade-in">
+            <img src="https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&w=800&q=80" alt="Robot Car" />
+          </div>
+        </div>
+      </section>
+
+      <section id="overview">
+        <h2><i class="fas fa-robot"></i> Overview</h2>
+        <div class="content animate-on-scroll">
+          <p>The Cuki M-1 is an innovative Arduino-based robotic car platform designed for education and experimentation. With its modular design and advanced capabilities, it serves as the perfect platform for learning robotics, programming, and electronics.</p>
+          <div class="features">
+            <div class="feature">
+              <i class="fas fa-cogs"></i>
+              <h3>Modular Design</h3>
+              <p>Easy to customize and upgrade</p>
+            </div>
+            <div class="feature">
+              <i class="fas fa-bolt"></i>
+              <h3>Fast</h3>
+              <p>High-performance operation</p>
+            </div>
+            <div class="feature">
+              <i class="fas fa-brain"></i>
+              <h3>AI-Powered</h3>
+              <p>Smart autonomous navigation</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="autonomous">
+        <h2><i class="fas fa-code"></i> Autonomous Navigation</h2>
+        <div class="content animate-on-scroll">
+          <p>The heart of Cuki M-1's intelligence lies in its autonomous navigation system. Using the ultrasonic sensor, the robot continuously scans its environment and makes real-time decisions to avoid obstacles.</p>
+          
+          <div class="code-container">
+            <pre><code>// Main autonomous navigation function
+void autonomousNavigation() {
+  int distance = getDistance();  // Read ultrasonic sensor
+  
+  if (distance > 20) {          // Clear path ahead
+    moveForward();
+  } else {
+    stopMotors();
+    int rightDistance = lookRight();
+    int leftDistance = lookLeft();
+    
+    if (rightDistance > leftDistance) {
+      turnRight();
+    } else {
+      turnLeft();
+    }
+  }
+}</code></pre>
+          </div>
+
+          <div class="function-details">
+            <div class="detail-item">
+              <i class="fas fa-satellite-dish"></i>
+              <h4>Distance Sensing</h4>
+              <p>Continuously monitors obstacles up to 4 meters ahead</p>
+            </div>
+            <div class="detail-item">
+              <i class="fas fa-code-branch"></i>
+              <h4>Decision Making</h4>
+              <p>Intelligent path selection based on environment analysis</p>
+            </div>
+            <div class="detail-item">
+              <i class="fas fa-rotate"></i>
+              <h4>Dynamic Response</h4>
+              <p>Real-time adjustment to changing conditions</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="hardware">
+        <h2><i class="fas fa-microchip"></i> Hardware Components</h2>
+        <div class="components-grid">
+          <div class="component animate-on-scroll">
+            <i class="fas fa-brain"></i>
+            <h3>Brain</h3>
+            <ul>
+              <li><i class="fas fa-microchip"></i> Arduino Uno</li>
+              <li><i class="fas fa-tachometer-alt"></i> 16MHz response</li>
+              <li><i class="fas fa-memory"></i> ATmega328P Processor</li>
+              <li><i class="fas fa-memory"></i> 8KB SRAM</li>
+            </ul>
+          </div>
+          <div class="component animate-on-scroll">
+            <i class="fas fa-cog"></i>
+            <h3>Motion</h3>
+            <ul>
+              <li><i class="fas fa-cogs"></i> 2x DC Motors</li>
+              <li><i class="fas fa-microchip"></i> L298N Motor Driver</li>
+              <li><i class="fas fa-tire"></i> All-terrain wheels</li>
+              <li><i class="fas fa-car"></i> 1x Motor Shield V5</li>
+            </ul>
+          </div>
+          <div class="component animate-on-scroll">
+            <i class="fas fa-satellite-dish"></i>
+            <h3>Sensors</h3>
+            <ul>
+              <li><i class="fas fa-wave-square"></i> Ultrasonic Distance Sensor</li>
+              <li><i class="fas fa-road"></i> Servo Motor</li>
+              <li><i class="fas fa-compass"></i> Light sensor</li>
+              <li><i class="fas fa-broadcast-tower"></i> Voice sensor </li>
+            </ul>
+          </div>
+          <div class="component animate-on-scroll">
+            <i class="fas fa-battery-full"></i>
+            <h3>Power</h3>
+            <ul>
+              <li><i class="fas fa-bolt"></i> 4.8V LiPo Battery</li>
+              <li><i class="fas fa-battery-three-quarters"></i> 2200mAh Capacity</li>
+              <li><i class="fas fa-plug"></i> Voltage Regulator</li>
+              <li><i class="fas fa-power-off"></i> Power Switch</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="specs">
+        <h2><i class="fas fa-clipboard-list"></i> Technical Specifications</h2>
+        <div class="specs-table animate-on-scroll">
+          <table>
+            <tr>
+              <th>Specification</th>
+              <th>Value</th>
+            </tr>
+            <tr>
+              <td><i class="fas fa-ruler-combined"></i> Dimensions</td>
+              <td>22cm × 18cm × 15cm</td>
+            </tr>
+            <tr>
+              <td><i class="fas fa-weight"></i> Weight</td>
+              <td>650g</td>
+            </tr>
+            <tr>
+              <td><i class="fas fa-tachometer-alt"></i> Max Speed</td>
+              <td>0.5 m/s</td>
+            </tr>
+            <tr>
+              <td><i class="fas fa-clock"></i> Battery Life</td>
+              <td>3 hours</td>
+            </tr>
+            <tr>
+              <td><i class="fas fa-wifi"></i> Control Range</td>
+              <td>Unlimited</td>
+            </tr>
+            <tr>
+              <td><i class="fas fa-usb"></i> Programming Interface</td>
+              <td>USB / Arduino IDE v2</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 Cuki M-1 Robot Car. All rights reserved.</p>
+      <div class="social-links">
+        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+      </div>
+    </footer>
+
+    <script>
+      // Theme toggle
+      const themeToggle = document.getElementById('theme-toggle');
+      const html = document.documentElement;
+      
+      themeToggle.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        html.setAttribute('data-theme', newTheme);
+        themeToggle.innerHTML = newTheme === 'light' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+      });
+
+      // Intersection Observer for scroll animations
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+    </script>
+  </body>
+</html>
